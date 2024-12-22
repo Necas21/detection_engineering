@@ -3,13 +3,13 @@ creation_date = "2023/06/11"
 
 [rule]
 author = ["Mounir Hedna"]
-description = "Test Update"
+description = "Test Update 2"
 from = "now-6m"
-name = "Test Update"
+name = "Test Update 2"
 risk_score = 100
 severity = "low"
 type = "query"
-rule_id = "00000000-0000-0000-0000-000000000100"
+rule_id = "00000000-0000-0000-0000-000000000101"
 query = '''
 event.dataset : zeek.http and user_agent.original: *Nmap* or user_agent.original: *Nikto*
 '''

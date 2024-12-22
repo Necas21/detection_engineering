@@ -63,4 +63,6 @@ for root, dirs, files in os.walk("detections/"):
                     if key == "status_code":
                         if 404 == elastic_data["status_code"]:
                             elastic_data = requests.post(url, headers=headers, data=data).json()
-                            print(elastic_data)
+                            print(f"[*] SUCCESS: Successfully created rule <{file}>")
+                    else:
+                        print(f"[*] SUCCESS: Successfully updated rule <{file}>")
