@@ -35,7 +35,7 @@ for object in mitre_data["objects"]:
 
 alert_data = {}
 
-for root, dirs, files in os.walk("C:/Users/Mounir/Documents/Security Studies/Detection Engineering/converted_detections"):
+for root, dirs, files in os.walk("detections/"):
     for file in files:
         if file.endswith(".toml"):
             full_path = os.path.join(root, file)
