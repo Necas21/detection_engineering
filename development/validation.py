@@ -2,11 +2,6 @@ import tomllib
 import sys
 import os
 
-# file = "alert_example.toml"
-
-# with open(file, "rb") as toml:
-#     alert = tomllib.load(toml)
-
 for root, dirs, files in os.walk("detections/"):
     for file in files:
         if file.endswith(".toml"):
