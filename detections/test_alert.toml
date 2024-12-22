@@ -3,9 +3,9 @@ creation_date = "2023/12/11"
 
 [rule]
 author = ["Mounir Hedna"]
-description = "Using Zeek HTTP data, we're looking at .bat file extensions on any destination port that isn't port 80."
+description = "Test"
 from = "now-6m"
-name = "Test Alert"
+name = "Test Alert Update"
 risk_score = 100
 severity = "medium"
 type = "query"
