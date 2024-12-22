@@ -25,9 +25,11 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v37
 
+      - name: Install dependencies
+        run: pip install -r development/requirements.txt
+
       - name: Run Update Script
         env:
           ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-      - run: pip install -r development/requirements.txt
-      - run: python development/update_alert.py
+        run: python development/update_alert.py
