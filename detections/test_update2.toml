@@ -3,13 +3,13 @@ creation_date = "2023/12/11"
 
 [rule]
 author = ["Mounir Hedna"]
-description = "Test Update"
+description = "Test Update 2"
 from = "now-6m"
-name = "Test Update"
+name = "Test Update 2"
 risk_score = 100
 severity = "medium"
 type = "query"
-rule_id = "00000000-0000-0000-0000-000000000099"
+rule_id = "00000000-0000-0000-0000-000000000088"
 query = '''
 event.dataset: zeek.http and url.extension : bat and not destination.port : 80
 '''
