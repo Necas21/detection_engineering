@@ -1,6 +1,7 @@
 import requests
 import tomllib
 import os
+import sys
 
 url = "https://raw.githubusercontent.com/mitre/cti/refs/heads/master/enterprise-attack/enterprise-attack.json"
 headers = {
@@ -73,6 +74,7 @@ for file in alert_data:
        # Check MITRE tactic exists
        if tactic not in mitre_tactic_list:
            print(f"[!] ERROR: Invalid MITRE tactic supplied [{tactic}] in file <{file}>")
+           sys.exit(1)
 
        # Check MITRE technique ID is valid
        try:
@@ -80,6 +82,7 @@ for file in alert_data:
                pass
        except KeyError:
            print(f"[!] ERROR: Invalid MITRE technique ID [{technique_id}] in file <{file}>")
+           sys.exit(1)
 
        # Check MITRE TID and name combination is valid
        try:
@@ -89,6 +92,7 @@ for file in alert_data:
                print(f"[!] ERROR: Invalid MITRE technique ID and technique name combination in file <{file}>:")
                print(f"EXPECTED: {mitre_name}")
                print(f"GIVEN: {alert_name}")
+               sys.exit(1)
        except KeyError:
            pass
        
@@ -101,6 +105,7 @@ for file in alert_data:
                     print(f"[!] ERROR: Invalid MITRE subtechnique ID and subtechnique name combination in file <{file}>:")
                     print(f"EXPECTED: {mitre_name}")
                     print(f"GIVEN: {alert_name}")
+                    sys.exit(1)
        except KeyError:
            pass          
 
@@ -108,5 +113,6 @@ for file in alert_data:
        try:
            if mitre_mapping[technique_id]["deprecated"]:
                print(f"[!] ERROR: Deprecated MITRE technique ID [{technique_id}] in file <{file}>")
+               sys.exit(1)
        except KeyError:
            pass
