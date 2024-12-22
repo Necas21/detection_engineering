@@ -6,7 +6,7 @@ author = ["Mounir Hedna"]
 description = "Using Zeek HTTP data, we're looking at .bat file extensions on any destination port that isn't port 80."
 from = "now-6m"
 name = "Bat files observed in HTTP Traffic on Unusual Port "
-# risk_score = 100
+risk_score = 100
 severity = "medium"
 type = "query"
 rule_id = "00000000-0000-0000-0000-000000000001"
@@ -17,7 +17,7 @@ event.dataset: zeek.http and url.extension : bat and not destination.port : 80
 [[rule.threat]]
 framework = "MITRE ATT&CK"
 [[rule.threat.technique]]
-id = "T1059"
+id = "T10591"
 name = "Command and Scripting Interpreter"
 reference = "https://attack.mitre.org/techniques/T1059/"
 [[rule.threat.technique.subtechnique]]
