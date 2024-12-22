@@ -2,6 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 import tomllib
+import sys
 
 load_dotenv()
 
@@ -56,3 +57,5 @@ for root, dirs, files in os.walk("detections/"):
             print(f"[*] SUCCESS: Successfully created rule <{file}>")
         except:
             print(f"[!] ERROR: {elastic_data.content} for file <{file}>")
+            sys.exit(1)
+
