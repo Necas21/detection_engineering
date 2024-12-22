@@ -1,0 +1,32 @@
+name: Update Detections
+
+on:
+  push:
+    path:
+      '**.toml'
+  workflow_dispatch:
+
+jobs:
+  elastic-detections-update:
+    runs-on: ubuntu-latest
+    env:
+      ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.4'
+
+      - name: Get Changed Files
+        id: changed-files
+        uses: tj-actions/changed-files@v37
+
+      - name: Run Update Script
+        env:
+          ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
+          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          pip install -r development/requirements.txt
+          python development/update_alert.py
