@@ -16,6 +16,6 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.11.4'
-      - run: pip install requests
+      - run: pip install -r development/requirements.txt
       - run: python development/validation.py
       - run: python development/mitre.py
