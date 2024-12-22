@@ -25,7 +25,7 @@ for root, dirs, files in os.walk("detections/"):
                     required_fields = ["description", "name", "risk_score", "severity", "type", "query", "threshold", "rule_id"]
                 else:
                     print(f"[!] ERROR: Unsupported rule type [{alert['rule']['type']}] found in <{file}>")
-                    break
+                    sys.exit(1)
 
                 for table in alert:
                     for field in alert[table]:
@@ -37,5 +37,6 @@ for root, dirs, files in os.walk("detections/"):
 
                 if missing_fields:
                     print(f"[!] ERROR: The following required fields are missing in <{file}> : {str(missing_fields)}")
+                    sys.exit(1)
                 else:
                     print(f"[*] SUCCESS: Validation passed for <{file}>")
