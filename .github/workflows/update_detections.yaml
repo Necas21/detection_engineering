@@ -6,10 +6,10 @@ on:
       - main
     path:
       '**.toml'
-    workflow_run:
-      workflows: ["TOML/MITRE Validation"]
-      types:
-        - completed
+  workflow_run:
+    workflows: ["TOML/MITRE Validation"]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
