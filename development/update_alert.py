@@ -59,4 +59,8 @@ for root, dirs, files in os.walk("detections/"):
                     elastic_data.raise_for_status()
                     print(f"[*] SUCCESS: Successfully updated rule <{file}>")
                 except:
-                    print(f"[!] ERROR: {str(elastic_data.content)} for file <{file}>")
+                    for key in elastic_data:
+                        if key == "status_code":
+                            if elastic_data["status_code"] == 404:
+                                elastic_data = requests.post(f"{url}", headers=headers, data=data)
+                                print(f"[*] SUCCESS: Successfully created rule <{file}>")
