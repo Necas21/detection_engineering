@@ -6,7 +6,7 @@ import tomllib
 load_dotenv()
 
 url = "https://50e136fe78584084803617ef7744e007.us-central1.gcp.cloud.es.io/api/detection_engine/rules"
-api_key = os.getenv("elatic_api_key")
+api_key = os.getenv("ELASTIC_API_KEY")
 headers = {
     "Content-Type": "application/json;charset=UTF-8",
     "kbn-xsrf": "true",
