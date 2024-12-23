@@ -21,7 +21,7 @@
 | --- | --- | --- | --- | --- |
 |Potential MSF PowerShell Payload Observed|2024/10/11|['Mounir Hedna']|50|high|
 |Data Exfiltration Observed via FTP|2024/10/11|['Mounir Hedna']|75|high|
-## Workflow Status
+## Workflow Status Badges
 [![Metrics](https://github.com/Necas21/detection_engineering/actions/workflows/metrics.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/metrics.yaml)
 [![All Detections To Elastic](https://github.com/Necas21/detection_engineering/actions/workflows/all_detections_to_elastic.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/all_detections_to_elastic.yaml)
 [![TOML/MITRE Validation](https://github.com/Necas21/detection_engineering/actions/workflows/toml_mitre_validation.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/toml_mitre_validation.yaml)
