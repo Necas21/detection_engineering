@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-python@v4 
         with:
           python-version: '3.11.4'
-      - run: pip install python-dateutil 
+      - run: pip install -r development/requirements.txt
       - run: python development/toml_to_report.py
       - run: python development/toml_to_csv.py
       - run: python development/toml_to_navigator.py
