@@ -115,7 +115,7 @@ for line in two_months.values():
     outF.write("|" + name + "|" + date + "|" + author + "|" + risk_score  + "|" + severity + "|\n")
 
 # Add workflow badges
-outF.write("## Workflow Status\n")
+outF.write("## Workflow Status Badges\n")
 outF.write("[![Metrics](https://github.com/Necas21/detection_engineering/actions/workflows/metrics.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/metrics.yaml)")
 outF.write("\n")
 outF.write("[![All Detections To Elastic](https://github.com/Necas21/detection_engineering/actions/workflows/all_detections_to_elastic.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/all_detections_to_elastic.yaml)")
