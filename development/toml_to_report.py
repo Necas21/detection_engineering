@@ -114,6 +114,13 @@ for line in two_months.values():
 
     outF.write("|" + name + "|" + date + "|" + author + "|" + risk_score  + "|" + severity + "|\n")
 
+# Add workflow badges
+outF.write("[![Metrics](https://github.com/Necas21/detection_engineering/actions/workflows/metrics.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/metrics.yaml)")
+outF.write("[![All Detections To Elastic](https://github.com/Necas21/detection_engineering/actions/workflows/all_detections_to_elastic.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/all_detections_to_elastic.yaml)")
+outF.write("[![TOML/MITRE Validation](https://github.com/Necas21/detection_engineering/actions/workflows/toml_mitre_validation.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/toml_mitre_validation.yaml)")
+outF.write("[![Update Detections](https://github.com/Necas21/detection_engineering/actions/workflows/update_detections.yaml/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/update_detections.yaml)")
+outF.write("[![Dependabot Updates](https://github.com/Necas21/detection_engineering/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Necas21/detection_engineering/actions/workflows/dependabot/dependabot-updates)")
+
 outF.close()
 
 
